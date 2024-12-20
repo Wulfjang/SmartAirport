@@ -1,0 +1,31 @@
+﻿<Window x:Class="SmartAirport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SmartAirport - Главное окно" Height="600" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Управление">
+                <MenuItem Header="Рейсы" Click="ManageFlightsMenuItem_Click"/>
+                <MenuItem Header="Багаж" Click="ManageBaggageMenuItem_Click"/>
+                <MenuItem Header="Безопасность" Click="ManageSecurityMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <TextBlock Text="Расписание рейсов" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Margin="20,40,0,0"/>
+        <DataGrid Name="FlightScheduleGrid" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20,70,20,80">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер рейса" Binding="{Binding FlightNumber}" Width="*"/>
+                <DataGridTextColumn Header="Пункт назначения" Binding="{Binding Destination}" Width="*"/>
+                <DataGridTextColumn Header="Время отправления" Binding="{Binding DepartureTime}" Width="*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Добавить рейс" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,20" Click="AddFlightButton_Click"/>
+        <Button Content="Редактировать рейс" Width="300" Height="30" HorizontalAlignment="Center" Margin="0,0,0,20" Click="EditFlightButton_Click" VerticalAlignment="Bottom"/>
+        <Button Content="Удалить рейс" Width="200" Height="30" HorizontalAlignment="Right" Margin="0,0,20,20" Click="DeleteFlightButton_Click" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

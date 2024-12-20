@@ -1,0 +1,29 @@
+﻿<Window x:Class="SmartAirport.AddBaggageForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить багаж" Height="300" Width="400">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="Идентификатор багажа:"/>
+            <TextBox Name="BaggageIDTextBox"/>
+
+            <TextBlock Text="Номер рейса:" Margin="0,10,0,0"/>
+            <TextBox Name="FlightNumberTextBox"/>
+
+            <TextBlock Text="Вес багажа (кг):" Margin="0,10,0,0"/>
+            <TextBox Name="WeightTextBox"/>
+
+            <TextBlock Text="Статус:" Margin="0,10,0,0"/>
+            <ComboBox Name="StatusComboBox">
+                <ComboBoxItem Content="Ожидает"/>
+                <ComboBoxItem Content="Загружен"/>
+                <ComboBoxItem Content="Потерян"/>
+            </ComboBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button Content="Сохранить" Width="100" Click="SaveButton_Click" Margin="0,0,10,0"/>
+                <Button Content="Отмена" Width="100" Click="CancelButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
