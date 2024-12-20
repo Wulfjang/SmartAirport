@@ -52,15 +52,7 @@ namespace SmartAirport
                 MessageBox.Show("Багаж успешно добавлен.");
             }
         }
-/// <summary>
-/// 
-/// //
-/// /
-/// /
-///
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
+       
         private void SearchBaggageButton_Click(object sender, RoutedEventArgs e)
         {
             SearchBaggageForm searchBaggageForm = new SearchBaggageForm(BaggageList.ToList());
