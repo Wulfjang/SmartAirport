@@ -59,8 +59,6 @@ namespace SmartAirport
             if (searchBaggageForm.ShowDialog() == true)
             {
                 var foundBaggage = searchBaggageForm.FoundBaggage;
-                MessageBox.Show($"Найденный багаж: ID: {foundBaggage.BaggageID}, Рейс: {foundBaggage.FlightNumber}, Вес: {foundBaggage.Weight}, Статус: {foundBaggage.Status}",
-                    "Результат поиска", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
